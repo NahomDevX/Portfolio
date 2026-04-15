@@ -35,7 +35,7 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <p className="text-accent font-medium tracking-wider uppercase text-sm mb-3">
             Get To Know Me
@@ -73,7 +73,7 @@ export default function About() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.4 + i * 0.1, duration: 0.5 }}
-                  className="text-center p-4 rounded-xl glass-light"
+                  className="text-center p-6 rounded-2xl glass-light"
                 >
                   <p className="text-2xl md:text-3xl font-bold gradient-text">
                     {stat.number}
@@ -91,7 +91,7 @@ export default function About() {
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="glass rounded-2xl p-6 md:p-8 glow-purple"
+            className="glass rounded-3xl p-8 md:p-10 lg:p-12 glow-purple"
           >
             <h3 className="text-xl font-semibold mb-6">
               Personal{" "}

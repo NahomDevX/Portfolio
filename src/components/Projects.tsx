@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 
@@ -13,7 +14,7 @@ const projects = [
       "A fully interactive slot machine game built in Node.js with betting mechanics, randomized reels, and payout system based on symbol combinations.",
     category: "Web App",
     tags: ["Node.js", "Html", "CSS", "JavaScript"],
-    image: null,
+    image: "/assets/jackpot.jpg",
     liveUrl: "#",
     githubUrl: "https://github.com/NahomDevX/NodeJackpot",
   },
@@ -23,7 +24,7 @@ const projects = [
       "A fully responsive fitness website showcasing gym services, training programs, and membership plans with a strong visual design.",
     category: "Web App",
     tags: ["Html", "CSS", "JavaScript","Node.js","Express","Xampp"],
-    image: null,
+    image: "/assets/gym.jpg",
     liveUrl: "#",
     githubUrl: "https://github.com/NahomDevX/DDUGYM",
   },
@@ -33,7 +34,7 @@ const projects = [
       "A command-line Rock, Paper, Scissors game built with Node.js, allowing users to play against the computer while tracking game statistics across sessions.",
     category: "Console App",
     tags: ["Node.js", "JavaScript"],
-    image: null,
+    image: "/assets/rock-paper-scissors.jpg",
     liveUrl: "#",
     githubUrl: "https://github.com/NahomDevX/Rock-Paper-Scissors-Node.js",
   },
@@ -43,7 +44,7 @@ const projects = [
       "An interactive 3D campus digital twin with live classroom simulation, predictive modeling, and a booking system with simulated payments.",
     category: "Web App",
     tags: ["React","Three.js", "Node.js", "MongoDB"],
-    image: null,
+    image: "/assets/pridroom.jpg",
     liveUrl: "#",
     githubUrl: "https://github.com/NahomDevX/PridRoom",
   },
@@ -53,7 +54,7 @@ const projects = [
       "A full-featured Android campus navigation system built with Java, integrating Google Maps, Firebase, offline caching, indoor navigation simulation, and MVVM architecture.",
     category: "Mobile",
     tags: ["Java", "Android", "Firebase", "Google Maps"],
-    image: null,
+    image: "/assets/campus-navigator.jpg",
     liveUrl: "#",
     githubUrl: "https://github.com/NahomDevX/Campus-Navigator",
   },
@@ -81,7 +82,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-20"
         >
           <p className="text-accent font-medium tracking-wider uppercase text-sm mb-3">
             My Work
@@ -97,7 +98,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex items-center justify-center gap-3 mb-12 flex-wrap"
+          className="flex items-center justify-center gap-3 mb-16 flex-wrap"
         >
           {categories.map((cat) => (
             <motion.button
@@ -119,7 +120,7 @@ export default function Projects() {
         {/* Projects grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
         >
           {filteredProjects.map((project, i) => (
             <motion.div
@@ -128,15 +129,24 @@ export default function Projects() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * i }}
-              className="group glass rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-500"
+              className="group glass rounded-3xl overflow-hidden hover:border-primary/30 transition-all duration-500"
             >
               {/* Image area */}
               <div className="relative h-48 bg-gradient-to-br from-primary/20 via-surface to-accent/20 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-foreground/10 group-hover:text-foreground/20 transition-colors">
-                    {project.title.charAt(0)}
-                  </span>
-                </div>
+                {project.image ? (
+                  <Image 
+                    src={project.image} 
+                    alt={project.title} 
+                    fill 
+                    className="object-cover transition-transform duration-500 group-hover:scale-110" 
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-4xl font-bold text-foreground/10 group-hover:text-foreground/20 transition-colors">
+                      {project.title.charAt(0)}
+                    </span>
+                  </div>
+                )}
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-4 gap-3">
                   <motion.a

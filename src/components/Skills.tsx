@@ -70,10 +70,10 @@ function SkillCard({
       whileHover={{ y: -8, scale: 1.05 }}
       transition={{ type: "spring", stiffness: 400, damping: 15 }}
     >
-      <div className="glass rounded-2xl p-5 w-32 h-32 flex flex-col items-center justify-center gap-3 group-hover:border-primary/30 transition-all duration-300 relative overflow-hidden">
+      <div className="glass rounded-3xl p-6 w-36 h-36 flex flex-col items-center justify-center gap-4 group-hover:border-primary/30 transition-all duration-300 relative overflow-hidden">
         {/* Glow on hover */}
         <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl"
+          className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-3xl"
           style={{
             background: `radial-gradient(circle at center, ${skill.color}, transparent 70%)`,
           }}
@@ -106,7 +106,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <p className="text-accent font-medium tracking-wider uppercase text-sm mb-3">
             What I Use

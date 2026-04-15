@@ -127,7 +127,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <p className="text-accent font-medium tracking-wider uppercase text-sm mb-3">
             Let&apos;s Connect
@@ -165,10 +165,10 @@ export default function Contact() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
-                  className="flex items-center gap-4 group"
+                  className="flex items-center gap-5 group"
                 >
-                  <div className="w-12 h-12 rounded-xl glass flex items-center justify-center text-primary-light group-hover:glow-purple transition-all">
-                    <info.icon size={20} />
+                  <div className="w-14 h-14 rounded-2xl glass flex items-center justify-center text-primary-light group-hover:glow-purple transition-all">
+                    <info.icon size={24} />
                   </div>
                   <div>
                     <p className="text-foreground/40 text-xs uppercase tracking-wider">
@@ -225,13 +225,13 @@ export default function Contact() {
           >
             <form
               onSubmit={handleSubmit}
-              className="glass rounded-2xl p-6 md:p-8 glow-purple"
+              className="glass rounded-3xl p-8 md:p-10 lg:p-12 glow-purple flex flex-col gap-6"
             >
               {/* Name */}
-              <div className="mb-5">
+              <div>
                 <label
                   htmlFor="contact-name"
-                  className="flex items-center gap-2 text-sm font-medium text-foreground/70 mb-2"
+                  className="flex items-center gap-2 text-sm font-medium text-foreground/70 mb-3"
                 >
                   <FiUser size={14} />
                   Your Name
@@ -243,7 +243,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="John Doe"
-                  className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 transition-all ${
+                  className={`w-full px-5 py-4 rounded-2xl bg-white/5 border text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 transition-all ${
                     errors.name
                       ? "border-red-500/50 focus:ring-red-500/30"
                       : "border-border focus:ring-primary/30 focus:border-primary/40"
@@ -255,10 +255,10 @@ export default function Contact() {
               </div>
 
               {/* Email */}
-              <div className="mb-5">
+              <div>
                 <label
                   htmlFor="contact-email"
-                  className="flex items-center gap-2 text-sm font-medium text-foreground/70 mb-2"
+                  className="flex items-center gap-2 text-sm font-medium text-foreground/70 mb-3"
                 >
                   <FiMail size={14} />
                   Your Email
@@ -270,7 +270,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="john@example.com"
-                  className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 transition-all ${
+                  className={`w-full px-5 py-4 rounded-2xl bg-white/5 border text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 transition-all ${
                     errors.email
                       ? "border-red-500/50 focus:ring-red-500/30"
                       : "border-border focus:ring-primary/30 focus:border-primary/40"
@@ -282,10 +282,10 @@ export default function Contact() {
               </div>
 
               {/* Message */}
-              <div className="mb-6">
+              <div>
                 <label
                   htmlFor="contact-message"
-                  className="flex items-center gap-2 text-sm font-medium text-foreground/70 mb-2"
+                  className="flex items-center gap-2 text-sm font-medium text-foreground/70 mb-3"
                 >
                   <FiMessageSquare size={14} />
                   Your Message
@@ -297,7 +297,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Tell me about your project..."
                   rows={5}
-                  className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 transition-all resize-none ${
+                  className={`w-full px-5 py-4 rounded-2xl bg-white/5 border text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 transition-all resize-none ${
                     errors.message
                       ? "border-red-500/50 focus:ring-red-500/30"
                       : "border-border focus:ring-primary/30 focus:border-primary/40"
@@ -314,7 +314,7 @@ export default function Contact() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold cursor-hover disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full mt-2 flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-gradient-to-r from-primary to-accent text-white font-semibold text-lg cursor-hover disabled:opacity-60 disabled:cursor-not-allowed"
                 whileHover={
                   !isSubmitting
                     ? {

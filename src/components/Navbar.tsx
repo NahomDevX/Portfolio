@@ -112,7 +112,7 @@ export default function Navbar() {
             e.preventDefault();
             handleNavClick("#contact");
           }}
-          className="hidden md:block px-5 py-2 text-sm font-semibold rounded-full bg-gradient-to-r from-primary to-accent text-white cursor-hover"
+          className="hidden md:block px-10 py-4 text-xs uppercase tracking-widest font-bold rounded-full bg-gradient-to-r from-primary to-accent text-white cursor-hover"
           whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(109,40,217,0.4)" }}
           whileTap={{ scale: 0.95 }}
         >
@@ -167,7 +167,7 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick("#contact");
                   }}
-                  className="block w-full text-center px-5 py-2.5 text-sm font-semibold rounded-full bg-gradient-to-r from-primary to-accent text-white"
+                  className="block w-full text-center px-10 py-5 text-xs uppercase tracking-widest font-bold rounded-full bg-gradient-to-r from-primary to-accent text-white"
                 >
                   Hire Me
                 </a>

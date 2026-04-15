@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiArrowDown } from "react-icons/fi";
 
@@ -154,7 +155,7 @@ export default function Hero() {
                   .querySelector("#projects")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="px-25 py-8 rounded-full bg-gradient-to-r from-primary to-accent text-white font-semibold text -sm cursor-hover"
+              className="px-16 py-6 rounded-full bg-gradient-to-r from-primary to-accent text-white font-bold text-xs uppercase tracking-[0.15em] hover:shadow-[0_0_30px_rgba(109,40,217,0.5)] transition-all cursor-hover"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 0 30px rgba(109,40,217,0.5)",
@@ -172,7 +173,7 @@ export default function Hero() {
                   .querySelector("#contact")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="px-25 py-8 rounded-full border border-primary/40 text-foreground font-semibold text-base hover:bg-primary/10 transition-colors cursor-hover"
+              className="px-16 py-6 rounded-full border-2 border-primary/40 text-foreground font-bold text-xs uppercase tracking-[0.15em] hover:bg-primary/10 transition-colors cursor-hover"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -185,7 +186,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.6 }}
-            className="flex items-center gap-5 mt-20 justify-center lg:justify-start"
+            className="flex items-center gap-5 mt-32 justify-center lg:justify-start"
           >
             {[
               { icon: FiGithub, href: "https://github.com/NahomDevX" },
@@ -233,10 +234,13 @@ export default function Hero() {
 
             {/* Profile image container */}
             <div className="absolute inset-3 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-              {/* Replace this div with your <Image /> component when ready */}
-              <div className="text-6xl font-bold gradient-text select-none">
-                NB
-              </div>
+              <Image 
+                src="/public/assets/Nahom.png" 
+                alt="Nahom Bekele" 
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
 
             {/* Floating decorative dots */}
