@@ -235,7 +235,7 @@ export default function Hero() {
             {/* Profile image container */}
             <div className="absolute inset-3 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
               <Image 
-                src="/public/assets/Nahom.png" 
+                src="/assets/Nahom.png" 
                 alt="Nahom Bekele" 
                 fill
                 className="object-cover"
