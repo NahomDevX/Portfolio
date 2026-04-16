@@ -41,9 +41,20 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setIsMobileOpen(false);
-    const el = document.querySelector(href);
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        const navHeight = 80; // approximate navbar height
+        const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - navHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }, 10);
     }
   };
 
@@ -121,7 +132,7 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden text-foreground text-2xl cursor-hover"
+          className="md:hidden text-foreground text-2xl cursor-hover p-2 -mr-2"
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           aria-label="Toggle menu"
         >
@@ -151,23 +162,23 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  className={`px-6 py-3 text-base font-medium transition-colors ${
+                  className={`block w-full text-left px-6 py-3 text-base font-medium transition-colors ${
                     activeSection === link.href.replace("#", "")
-                      ? "text-primary-light bg-primary/10"
-                      : "text-foreground/70 hover:text-foreground hover:bg-white/5"
+                      ? "text-primary-light bg-primary/10 border-l-4 border-primary-light"
+                      : "text-foreground/70 hover:text-foreground hover:bg-white/5 border-l-4 border-transparent"
                   }`}
                 >
                   {link.name}
                 </motion.a>
               ))}
-              <div className="px-6 pt-3">
+              <div className="px-6 pt-5 pb-2">
                 <a
                   href="#contact"
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavClick("#contact");
                   }}
-                  className="block w-full text-center px-10 py-5 text-xs uppercase tracking-widest font-bold rounded-full bg-gradient-to-r from-primary to-accent text-white"
+                  className="block w-full text-center px-10 py-4 text-sm uppercase tracking-widest font-bold rounded-xl bg-gradient-to-r from-primary to-accent text-white"
                 >
                   Hire Me
                 </a>
