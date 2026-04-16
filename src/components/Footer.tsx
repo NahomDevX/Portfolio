@@ -82,10 +82,6 @@ export default function Footer() {
           <p className="text-foreground/30 text-sm">
             © {new Date().getFullYear()} Nahom Bekele. All rights reserved.
           </p>
-
-          <p className="text-foreground/20 text-xs">
-            Built with Next.js, Tailwind CSS &amp; Framer Motion
-          </p>
         </div>
       </div>
 
