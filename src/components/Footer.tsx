@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiTwitter, FiArrowUp } from "react-icons/fi";
 
 const socials = [
-  { icon: FiGithub, href: "https://github.com", label: "GitHub" },
-  { icon: FiLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: FiTwitter, href: "https://twitter.com", label: "Twitter" },
+  { icon: FiGithub, href: "https://github.com/NahomDevX", label: "GitHub" },
+  { icon: FiLinkedin, href: "https://www.linkedin.com/in/nahombekele116", label: "LinkedIn" },
+  { icon: FiTwitter, href: "https://x.com/nahom_116", label: "Twitter" },
 ];
 
 export default function Footer() {
