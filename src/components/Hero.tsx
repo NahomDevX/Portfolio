@@ -204,7 +204,7 @@ export default function Hero() {
                 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <social.icon size={30} />
+                <social.icon size={20} />
               </motion.a>
             ))}
           </motion.div>
