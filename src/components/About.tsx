@@ -124,8 +124,8 @@ export default function About() {
 
             {/* Download CV */}
             <motion.a
-              href="/resume.pdf"
-              download
+              href="/assets/nahom-bekele-cv.pdf"
+              download="Nahom_Bekele_CV.pdf"
               className="mt-8 w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold cursor-hover"
               whileHover={{
                 scale: 1.03,
